@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum CourseLevel {
+  EASY
+  MEDIUM
+  HARD
+}
+
+model Course {
+  course_id    String   @id @default(uuid())
+  sno          Int      @default(autoincrement())
+  course_title String 
+  price        String        @default("500")
+  level        CourseLevel   @default(EASY)
+  created_at   DateTime      @default(now())
+  updated_at   DateTime      @updatedAt
+}
