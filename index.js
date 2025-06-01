@@ -6,7 +6,7 @@ const app = express();
 const prisma = new PrismaClient();
 
 app.get("/", (req, res) => {
-  res.send("Error Handling");
+  res.send("Error Handlin Hello World");
 });
 
 app.listen(8001);
